@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 logs/*
 !.gitkeep
 node_modules/
@@ -6,3 +7,7 @@ tmp
 .DS_Store
 .idea
 app/index.html
+=======
+README.md
+./angular-seed/app/index.html
+>>>>>>> edbe2549ccb9fa3a77a2ba1fc6789eb2804fad35
