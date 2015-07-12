@@ -28,3 +28,10 @@
   content: "";
   padding: 0;
 }
+
+/* map */
+.map {
+  height: 95%;
+  margin: 0;
+  padding: 0
+}
