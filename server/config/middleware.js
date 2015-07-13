@@ -2,42 +2,28 @@ var morgan 	   = require('morgan'),
 	bodyParser = require('body-parser');
 
 var OAuth = require('oauth');
-var OAuth2 = OAuth.OAuth2;
 var secret = require('./config');
-var oauth2 = new OAuth2(
+// twitter urls
+var user_stream_url   = "https://userstream.twitter.com/1.1/user.json";
+var request_token_url = "https://api.twitter.com/oauth/request_token";
+var access_token_url  = 'https://api.twitter.com/oauth/access_token';
+
+// oauth V1.0?
+var OAuth = OAuth.OAuth;
+var oauth = new OAuth(
+	request_token_url,
+	access_token_url,
 	secret.twitterConsumerKey,
 	secret.twitterConsumerSecret,
-	'https://api.twitter.com/',
+	'1.0',
 	null,
-	'oauth2/token',
+	'HMAC-SHA1',
 	null
 	);
 
-// console.log("oauth2", oauth2);
-oauth2.getOAuthAccessToken(
-	"",
-	{'grant_type': 'client_credentials'},
-	function (e, access_token, refresh_token, results) {
-		// console.log('bearer: ',access_token);
-		// console.log("access_token: ", access_token);
-		oauth2.get('https://api.twitter.com/1.1/trends/place.json?id=3278872357',
-			access_token, function(e, data, res) {
-				if (e) { console.error(e); return null};
-				if (res.statusCode !== 200) {
-					// return console.error(res.statusCode);
-					return new Error('OAuth2 request failed: ' + res.statusCode);
-				};
-				try {
-					data = JSON.parse(data);
-				}
-				catch (e) {
-					return console.error(e);
-				}
+// console.log(oauth);
 
-				// return the data;
-				console.log("Got data! ", data);
-			})
-	})
+
 
 
 module.exports = function(app, express) {
