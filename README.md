@@ -52,7 +52,10 @@ Required Technology:
 Front End: 								TimeLine
 [x] Angular JS  						 12:00PM
 [X] Basic google map integration API vs Open Map
-[ ] Flight tracking information API      12:00PM
+[Not applicapable] Flight tracking information API      12:00PM
+[ ] Twitter API in general 				 01:45PM
+[ ] Twitter Location API 				 02:45PM
+[ ] Use other API for other service
 [ ] Choose D3 or WebGL				     12:30PM
 [ ] Try out Visualization 				  3:00PM
 
@@ -60,5 +63,5 @@ Back End: 								TimeLine
 [x] Bring up express server 			  
 
 Project Management                      TimeLine
-[] Git/code structure setup 			 11:45pm
+[X] Git/code structure setup 			 11:45pm
 [] Heroku Deployment                     Extra
