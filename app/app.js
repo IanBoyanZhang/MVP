@@ -6,6 +6,7 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.twitter',
+  'myApp.services',
   'myApp.version'
 ]).
 config(function($stateProvider, $urlRouterProvider) {

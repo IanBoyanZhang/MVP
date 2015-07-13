@@ -1,5 +1,5 @@
 # Project Name #
-
+TwitterHeatMap
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
 
@@ -18,7 +18,8 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
-  Real time visualization of global commercial flight trace
+  Checkout current news heat!
+  <!-- Real time visualization of global commercial flight trace -->
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
   A mix of art, data and engineering, additional feature no-fly for drones

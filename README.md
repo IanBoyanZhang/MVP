@@ -53,8 +53,10 @@ Front End: 								TimeLine
 [x] Angular JS  						 12:00PM
 [X] Basic google map integration API vs Open Map
 [Not applicapable] Flight tracking information API      12:00PM
-[ ] Twitter API in general 				 01:45PM
-[ ] Twitter Location API 				 02:45PM
+[X] Installed OAuth                      02:15PM
+[ ] Twitter API authentication			 02:30PM
+[ ] Twitter API in general 				 03:45PM
+[ ] Twitter Location API 				 04:45PM
 [ ] Use other API for other service
 [ ] Choose D3 or WebGL				     12:30PM
 [ ] Try out Visualization 				  3:00PM
