@@ -12,7 +12,7 @@ var fs 		 = require('fs'),
 	// input: instream
 // })
 
-var executionContent = function	() {
+var executionContent = function	(req, res, next) {
 	// All handlers 
 	// check geo info
 	// going through the file
@@ -36,9 +36,9 @@ var executionContent = function	() {
 		// console.log(data);
 		centroidLocation = parseData(data);
 		console.log(centroidLocation);
-		// sendDataCb(centroidLocation);
+		res.json(centroidLocation);
+		next();
 	});	
-	// return centroidLocation;
 }
 
 
@@ -48,15 +48,11 @@ module.exports = function(app, express) {
 	app.use(bodyParser.json());
 	app.use(express.static(__dirname + '/../../app'));
 
-	// Actual functionality
-	// executionContent();
-	app.get("/data", function(req, res, next) {
-		res.json(200000);
-		next();
-	}, function(req, res, next) {
-		console.log("data request!");
-		next(); 						// do we need to put data here?
-	})
 	// Set up routing table
+	app.get("/data", function(req, res, next) {
+		// Actual functionality
+		executionContent(req, res, next);
+	})
+	
 
 }
