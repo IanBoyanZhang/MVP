@@ -23,7 +23,7 @@ angular.module('myApp.services', [])
 .factory('HeatMapLayer', [function() {
   /* Data points defined as an array of LatLng objects */
   // test data set
-  var heatmapData = [
+  var testHeatmapData = [
     new google.maps.LatLng(37.782, -122.447),
     new google.maps.LatLng(37.782, -122.445),
     new google.maps.LatLng(37.782, -122.443),
@@ -40,8 +40,20 @@ angular.module('myApp.services', [])
     new google.maps.LatLng(37.785, -122.435)
   ];
 
+  var layerDataTransform = function(RawLatLng) {
+    // for loop
+    var heatmapData = [];
+    for (var i = 0, l = RawLatLng.length; i < l; i++) {
+      // console.log(RawLatLng[i]);
+      heatmapData[i] = new google.maps.LatLng(RawLatLng[i][1], RawLatLng[i][0]);
+    };
+    return heatmapData;
+  };
+
   return {
-    heatmapData: heatmapData
+    // heatmapData: heatmapData || testHeatmapData,
+    heatmapData: testHeatmapData,
+    layerDataTransform: layerDataTransform
   }
 }])
 .factory('D3Service', [function() {

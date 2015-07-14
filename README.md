@@ -55,7 +55,7 @@ Front End: 								  TimeLine
 [Not applicapable ] Choose D3 or WebGL    12:45AM
 [X] Naive google map style customization  01:05AM 		01:41AM
 [X] Native google map style overlay       01:41AM
-[ ] Tryout Polymap/D3 with AngularJS      02:30AM
+[Not attempted] Tryout Polymap/D3 with AngularJS      02:30AM
 [X] Try out google Native Visualization    3:00AM	    02:33AM
 	Google native visualization capability is limted
 
@@ -67,11 +67,10 @@ Back End: 								TimeLine
 [X] Twitter Location API 				   11:45PM 	     11:45PM
 <!-- [ ] Use other API for other service -->
 [Not applicapable] Call Python Script in JavaScript/JSON? 12:15AM 12:40AM
-[ ] Read singal data and parsing           11:00AM
+[X] Read single file and parsing           11:00AM 		 1:00PM
 [ ] Read local file to buffer or stream in JavaScript   01:15AM 
 	Start with fs.readflie
-[ ] Parse twitter data 					   4:00AM
-
+[X] Parse twitter data 					   4:00AM        1:30PM
 
 Project Management                      TimeLine
 [X] Git/code structure setup 			 11:45pm
