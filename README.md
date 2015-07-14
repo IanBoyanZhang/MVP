@@ -55,7 +55,7 @@ Front End: 								  TimeLine
 [Not applicapable ] Choose D3 or WebGL    12:45AM
 [X] Naive google map style customization  01:05AM 		01:41AM
 [X] Native google map style overlay       01:41AM
-[ ] Tryout Polymap & D3
+[ ] Tryout Polymap/D3 with AngularJS      02:30AM
 [ ] Try out Visualization 				   3:00PM
 
 Back End: 								TimeLine
