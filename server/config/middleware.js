@@ -13,27 +13,23 @@ var fs 		 = require('fs'),
 // })
 
 var executionContent = function	(req, res, next) {
-	// All handlers 
-	// check geo info
-	// going through the file
 	var parseData = function(inputData) {
-		// console.log("I am done");
 		var dataByPlace = JSON.parse(inputData).result.places;
 
 		var bLoc = [];
-		// loop through dataObj
 		for (var i = dataByPlace.length - 1; i >= 0; i--) {
 			bLoc[i] = dataByPlace[i].centroid;
 		};
 
-		// console.log(bLoc);
 		return bLoc;
 	}
 
-	// var centroidLocation;
-	fs.readFile('./data/city', {"encoding": "utf8"}, function(err, data) {
+	var centroidLocation;
+	// loop through request body to parse all requested string
+	console.log("Server received request: ", req.body);
+	var path = req.body.name || "./data/sf"
+	fs.readFile(path, {"encoding": "utf8"}, function(err, data) {
 		if (err) { throw err };
-		// console.log(data);
 		centroidLocation = parseData(data);
 		console.log(centroidLocation);
 		res.json(centroidLocation);
@@ -50,9 +46,12 @@ module.exports = function(app, express) {
 
 	// Set up routing table
 	app.get("/data", function(req, res, next) {
-		// Actual functionality
+		// Functionality
+		// loop through
 		executionContent(req, res, next);
-	})
+	});
 	
-
+	app.post("/data", function(req, res, next) {
+		executionContent(req, res, next)
+	});
 }

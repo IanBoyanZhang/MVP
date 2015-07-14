@@ -47,6 +47,7 @@ angular.module('myApp.services', [])
       // console.log(RawLatLng[i]);
       heatmapData[i] = new google.maps.LatLng(RawLatLng[i][1], RawLatLng[i][0]);
     };
+
     return heatmapData;
   };
 
@@ -61,33 +62,28 @@ angular.module('myApp.services', [])
   // insert d3 code here
   return d3;  
 }])
-.factory('FileReader', [function() {
-  // if (window.File && window.FileReader && window.FileList && window.Blob) {
-  //   // Great success! All the File APIs are supported.
-  //   console.log("File service supported!")
-  // } else {
-  //   alert('The File APIs are not fully supported in this browser.');
-  // }
-  return {
-
-  }
-}])
 .factory('DataComm', ['$http', function($http) {
   var getData = function() {
     return $http({
       method: "GET",
       url: 'http://localhost:8000/data'
     })
-    /*.
-    sucess(function(data) {
-      console.log("Bounce from server", data);
-    }).
-    error(function(err) {
-      console.error(err);
-    })*/
-  }
+  };
 
+  var postGetData = function() {
+    return $http({
+      method: "POST",
+      url: 'http://localhost:8000/data',
+      data: { name: "./data/city"}
+    })
+  };
+
+  var streamData = function() {
+
+  };
   return {
-    getData: getData
+    getData: getData,
+    postGetData: postGetData,
+    streamData: streamData
   }
 }])
