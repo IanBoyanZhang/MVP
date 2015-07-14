@@ -47,23 +47,34 @@ To build on your learning of core engineering concepts, we will begin thinking a
 
 
 
-
-Required Technology:
-Front End: 								TimeLine
-[x] Angular JS  						 12:00PM
+Task Checker:
+Front End: 								  TimeLine
+[x] Angular JS  						   12:00PM
 [X] Basic google map integration API vs Open Map
 [Not applicapable] Flight tracking information API      12:00PM
-[X] Installed OAuth                      02:15PM
-[ ] Twitter API authentication			 02:30PM
-[ ] Twitter API in general 				 03:45PM
-[ ] Twitter Location API 				 04:45PM
-[ ] Use other API for other service
-[ ] Choose D3 or WebGL				     12:30PM
-[ ] Try out Visualization 				  3:00PM
+[Not applicapable ] Choose D3 or WebGL    12:45AM
+[X] Naive google map style customization  01:05AM
+[ ] Try out Visualization 				   3:00PM
 
 Back End: 								TimeLine
 [x] Bring up express server 			  
+[X] Installed OAuth                        02:15PM
+[X] Twitter API authentication			   02:30PM        7:00PM
+[X] Twitter API in general 				   09:45PM       11:00PM
+[X] Twitter Location API 				   11:45PM 	     11:45PM
+<!-- [ ] Use other API for other service -->
+[Not applicapable] Call Python Script in JavaScript/JSON? 12:15AM 12:40AM
+[] Read local file to buffer or stream in JavaScript   01:15AM 
+
 
 Project Management                      TimeLine
 [X] Git/code structure setup 			 11:45pm
 [] Heroku Deployment                     Extra
+
+## Dependency
+Python 
+	oauth2 library
+	 pip install --user oauth2
+
+Twitter authentication information
+https://apps.twitter.com/app/8543071/keys
