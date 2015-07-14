@@ -33,10 +33,10 @@ To build on your learning of core engineering concepts, we will begin thinking a
   - [Mostly Completed] Pick an idea (implement a technology, build a product, make art, etc).
   - [X] Write it down on paper
   - [ ] Imagine what portion of this could be done in 24 hours.
-  - [ ] Cut the scope in half.
-  - [ ] Cut the above scope in half again.
+  - [X] Cut the scope in half.
+  - [X] Cut the above scope in half again.
   - [X] Fill in the README.md template document
-- [ ] Use iterative development (go straight to something that demos your idea)
+- [X] Use iterative development (go straight to something that demos your idea)
 - [ ] Prepare for pitch @ demo on Tuesday
 
 
@@ -56,7 +56,9 @@ Front End: 								  TimeLine
 [X] Naive google map style customization  01:05AM 		01:41AM
 [X] Native google map style overlay       01:41AM
 [ ] Tryout Polymap/D3 with AngularJS      02:30AM
-[ ] Try out Visualization 				   3:00PM
+[X] Try out google Native Visualization    3:00AM	    02:33AM
+	Google native visualization capability is limted
+[ ] Parse twitter data 					   4:00AM
 
 Back End: 								TimeLine
 [x] Bring up express server 			  
