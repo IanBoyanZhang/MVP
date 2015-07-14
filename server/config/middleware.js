@@ -5,6 +5,9 @@ var morgan 	   = require('morgan'),
 var fs 		 = require('fs'),
 	stream   = require('stream'),
 	readline = require('readline');
+
+var LineByLineReader = require('line-by-line'),
+    lr = new LineByLineReader('data/rawData');
 	// es  	= require('event-stream')
 
 // var instream = fs.createReadStream('../../data/output', {flags: 'r', encoding: 'utf-8'});
@@ -31,13 +34,43 @@ var executionContent = function	(req, res, next) {
 	fs.readFile(path, {"encoding": "utf8"}, function(err, data) {
 		if (err) { throw err };
 		centroidLocation = parseData(data);
-		console.log(centroidLocation);
+		// console.log(centroidLocation);
 		res.json(centroidLocation);
 		next();
 	});	
-}
+};
 
+var readLineByLine = function() {
+	// console.log(lr);
+	lr.on('error', function(err) {
+		if (err) { throw err };
+	});
 
+	lr.on('line', function (line) {
+		// pause emitting of lines 
+		// lr.pause();
+		// console.log(line);
+		// lr.resume();
+
+	})
+
+	lr.on('end', function() {
+		console.log("All lines are read, file is closed now!");
+	})
+};
+
+var readLargeFileInBatch = function() {
+	var centroidLocation;
+	var path = 'data/rawData';
+	fs.readFile(path, {"encoding": "utf8"}, function(err, data) {
+		if (err) { throw err };
+		// centroidLocation = parseData(data);
+		// console.log(centroidLocation);
+		console.log('Read large file!');
+	});	
+};
+
+// test with directly file read
 module.exports = function(app, express) {
 	app.use(morgan('dev'));
 	app.use(bodyParser.urlencoded({extended: true}));
@@ -54,4 +87,7 @@ module.exports = function(app, express) {
 	app.post("/data", function(req, res, next) {
 		executionContent(req, res, next)
 	});
+
+	// readLineByLine();
+	readLargeFileInBatch();
 }

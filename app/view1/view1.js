@@ -5,8 +5,8 @@ angular.module('myApp.view1', [])
 	var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
 	// var newCity = new google.maps.LatLng(37, -122);
     var mapOptions = {
-        // zoom: 8,
-        zoom: 12,
+        zoom: 8,
+        // zoom: 12,
         center: sanFrancisco,
         // center: newCity,
         mapTypeId: google.maps.MapTypeId.TERRAIN,
@@ -26,7 +26,7 @@ angular.module('myApp.view1', [])
 		  dissipating: true,
 		  map: $scope.map
 		});
-	})
+	});
 
 	DataComm.postGetData().then(function(dataResponse, status, headers, config) {
 		heatmap = new google.maps.visualization.HeatmapLayer({
@@ -35,7 +35,7 @@ angular.module('myApp.view1', [])
 		  dissipating: true,
 		  map: $scope.map
 		});
-	})
+	});
 
 	DataComm.streamData();
 });

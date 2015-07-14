@@ -67,10 +67,10 @@ Back End: 								TimeLine
 [X] Twitter Location API 				   11:45PM 	     11:45PM
 <!-- [ ] Use other API for other service -->
 [Not applicapable] Call Python Script in JavaScript/JSON? 12:15AM 12:40AM
-[X] Read single file and parsing           11:00AM 		 1:00PM
-[ ] Read local file to buffer or stream in JavaScript   01:15AM 
-	Start with fs.readflie
-[X] Parse twitter data 					   4:00AM        1:30PM
+[X] Read single file and parsing           11:00AM 		  1:00PM
+[X] Read large file using line by line or standard readFile method
+									       01:15AM       03:25PM
+[X] Parse twitter data 					    4:00AM        1:30PM
 
 Project Management                      TimeLine
 [X] Git/code structure setup 			 11:45pm
@@ -82,4 +82,4 @@ Python
 	 pip install --user oauth2
 
 Twitter authentication information
-https://apps.twitter.com/app/8543071/keys
+<!-- https://apps.twitter.com/app/8543071/keys -->
