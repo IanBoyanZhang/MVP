@@ -8,6 +8,7 @@ tmp
 .idea
 app/index.html
 server/config/config.js
+data/*
 =======
 README.md
 ./angular-seed/app/index.html

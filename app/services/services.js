@@ -44,8 +44,38 @@ angular.module('myApp.services', [])
     heatmapData: heatmapData
   }
 }])
-.factory('d3Service', [function() {
+.factory('D3Service', [function() {
   var d3;
   // insert d3 code here
   return d3;  
+}])
+.factory('FileReader', [function() {
+  // if (window.File && window.FileReader && window.FileList && window.Blob) {
+  //   // Great success! All the File APIs are supported.
+  //   console.log("File service supported!")
+  // } else {
+  //   alert('The File APIs are not fully supported in this browser.');
+  // }
+  return {
+
+  }
+}])
+.factory('DataComm', ['$http', function($http) {
+  var getData = function() {
+    return $http({
+      method: "GET",
+      url: 'http://localhost:8000/data'
+    })
+    /*.
+    sucess(function(data) {
+      console.log("Bounce from server", data);
+    }).
+    error(function(err) {
+      console.error(err);
+    })*/
+  }
+
+  return {
+    getData: getData
+  }
 }])

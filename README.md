@@ -58,7 +58,6 @@ Front End: 								  TimeLine
 [ ] Tryout Polymap/D3 with AngularJS      02:30AM
 [X] Try out google Native Visualization    3:00AM	    02:33AM
 	Google native visualization capability is limted
-[ ] Parse twitter data 					   4:00AM
 
 Back End: 								TimeLine
 [x] Bring up express server 			  
@@ -68,7 +67,10 @@ Back End: 								TimeLine
 [X] Twitter Location API 				   11:45PM 	     11:45PM
 <!-- [ ] Use other API for other service -->
 [Not applicapable] Call Python Script in JavaScript/JSON? 12:15AM 12:40AM
-[] Read local file to buffer or stream in JavaScript   01:15AM 
+[ ] Read singal data and parsing           11:00AM
+[ ] Read local file to buffer or stream in JavaScript   01:15AM 
+	Start with fs.readflie
+[ ] Parse twitter data 					   4:00AM
 
 
 Project Management                      TimeLine

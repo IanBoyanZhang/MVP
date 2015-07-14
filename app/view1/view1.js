@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myApp.view1', [])
-.controller('View1Ctrl', function($scope, View1, HeatMapLayer) {
+.controller('View1Ctrl', function($scope, View1, HeatMapLayer, FileReader/*, DataComm*/) {
 	var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
     var mapOptions = {
         zoom: 12,
