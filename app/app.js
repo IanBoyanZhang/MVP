@@ -3,15 +3,15 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ui.router',
+  'myApp.services',
   'myApp.view1',
   'myApp.view2',
   'myApp.twitter',
-  'myApp.services',
   'myApp.version'
 ]).
 config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/');
-
+	
 	$stateProvider
 	.state('home', {
 		url: "/",

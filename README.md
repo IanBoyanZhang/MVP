@@ -53,7 +53,9 @@ Front End: 								  TimeLine
 [X] Basic google map integration API vs Open Map
 [Not applicapable] Flight tracking information API      12:00PM
 [Not applicapable ] Choose D3 or WebGL    12:45AM
-[X] Naive google map style customization  01:05AM
+[X] Naive google map style customization  01:05AM 		01:41AM
+[X] Native google map style overlay       01:41AM
+[ ] Tryout Polymap & D3
 [ ] Try out Visualization 				   3:00PM
 
 Back End: 								TimeLine
