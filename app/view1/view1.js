@@ -33,8 +33,8 @@ angular.module('myApp.view1', [])
 	var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
 	// var newCity = new google.maps.LatLng(37, -122);
     var mapOptions = {
-        zoom: 8,
-        // zoom: 12,
+        // zoom: 8,
+        zoom: 12,
         center: sanFrancisco,
         // center: newCity,
         mapTypeId: google.maps.MapTypeId.TERRAIN,
@@ -48,18 +48,18 @@ angular.module('myApp.view1', [])
     var heatmap;
 	// // heatmap.setMap($scope.map);
 	// // Only SF
-	// DataComm.getData().then(function(dataResponse, status, headers, config) {
-	// 	heatmap = new google.maps.visualization.HeatmapLayer({
-	// 	  data: HeatMapLayer.layerDataTransform(dataResponse.data),
-	// 	  //   data: HeatMapLayer.heatmapData, 		// Testing
-	// 	  dissipating: true,
-	// 	  map: $scope.map
-	// 	});
+	DataComm.getData().then(function(dataResponse, status, headers, config) {
+		heatmap = new google.maps.visualization.HeatmapLayer({
+		  data: HeatMapLayer.layerDataTransform(dataResponse.data),
+		  //   data: HeatMapLayer.heatmapData, 		// Testing
+		  dissipating: true,
+		  map: $scope.map
+		});
 
-	// 	changeGradient(heatmap);
-	// 	changeRadius(heatmap);
-	// 	changeOpacity(heatmap);
-	// });
+		changeGradient(heatmap);
+		changeRadius(heatmap);
+		changeOpacity(heatmap);
+	});
 
 	// DataComm.postGetData().then(function(dataResponse, status, headers, config) {
 	// 	heatmap = new google.maps.visualization.HeatmapLayer({
