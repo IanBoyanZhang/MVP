@@ -68,7 +68,7 @@ var readLineByLine = function() {
 
 	lr.on('end', function() {
 		console.log("All lines are read, file is closed now!");
-		console.log(globalLocTable);
+		// console.log(globalLocTable);
 		// res.json(globalLocTable);
 	})
 };
@@ -80,8 +80,8 @@ var readLargeFileInBatch = function(req, res, next) {
 		if (err) { throw err };
 		// centroidLocation = parseData(data);
 		// console.log(centroidLocation);
-		console.log(JSON.parse(data));
-		console.log('Read large file!');
+		// console.log(JSON.parse(data));
+		// console.log('Read large file!');
 	});	
 };
 
