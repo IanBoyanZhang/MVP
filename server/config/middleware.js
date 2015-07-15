@@ -6,8 +6,8 @@ var fs 		 = require('fs'),
 	stream   = require('stream'),
 	readline = require('readline');
 
-var LineByLineReader = require('line-by-line'),
-    lr = new LineByLineReader('data/rawData');
+var LineByLineReader = require('line-by-line');
+var lr = new LineByLineReader('data/rawData');
 	// es  	= require('event-stream')
 
 // var instream = fs.createReadStream('../../data/output', {flags: 'r', encoding: 'utf-8'});
@@ -15,10 +15,11 @@ var LineByLineReader = require('line-by-line'),
 	// input: instream
 // })
 
+var globalLocTable = [];
+
 var executionContent = function	(req, res, next) {
 	var parseData = function(inputData) {
 		var dataByPlace = JSON.parse(inputData).result.places;
-
 		var bLoc = [];
 		for (var i = dataByPlace.length - 1; i >= 0; i--) {
 			bLoc[i] = dataByPlace[i].centroid;
@@ -29,7 +30,7 @@ var executionContent = function	(req, res, next) {
 
 	var centroidLocation;
 	// loop through request body to parse all requested string
-	console.log("Server received request: ", req.body);
+	// console.log("Server received request: ", req.body);
 	var path = req.body.name || "./data/sf"
 	fs.readFile(path, {"encoding": "utf8"}, function(err, data) {
 		if (err) { throw err };
@@ -41,7 +42,11 @@ var executionContent = function	(req, res, next) {
 };
 
 var readLineByLine = function() {
+	// var parseLine = function(line) {
+	// 	return null;
+	// };
 	// console.log(lr);
+
 	lr.on('error', function(err) {
 		if (err) { throw err };
 	});
@@ -51,21 +56,31 @@ var readLineByLine = function() {
 		// lr.pause();
 		// console.log(line);
 		// lr.resume();
-
+		// console.log(JSON.parse(line));
+		var val = JSON.parse(line).coordinates;
+		if( val !== undefined ) {
+			// console.log(val);
+			if (val) {
+				globalLocTable.push(val.coordinates);
+			};
+		}
 	})
 
 	lr.on('end', function() {
 		console.log("All lines are read, file is closed now!");
+		console.log(globalLocTable);
+		// res.json(globalLocTable);
 	})
 };
 
-var readLargeFileInBatch = function() {
+var readLargeFileInBatch = function(req, res, next) {
 	var centroidLocation;
 	var path = 'data/rawData';
 	fs.readFile(path, {"encoding": "utf8"}, function(err, data) {
 		if (err) { throw err };
 		// centroidLocation = parseData(data);
 		// console.log(centroidLocation);
+		console.log(JSON.parse(data));
 		console.log('Read large file!');
 	});	
 };
@@ -88,6 +103,11 @@ module.exports = function(app, express) {
 		executionContent(req, res, next)
 	});
 
-	// readLineByLine();
-	readLargeFileInBatch();
+	readLineByLine();
+	app.get("/data/raw", function(req, res, next) {
+		// readLineByLine(req, res, next);
+		res.json(globalLocTable);
+		next();
+	});
+	// readLargeFileInBatch();
 }

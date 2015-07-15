@@ -78,12 +78,17 @@ angular.module('myApp.services', [])
     })
   };
 
-  var streamData = function() {
-
+  var getDataByLink = function(link) {
+    var path = "http://localhost:8000" + link;
+    return $http({
+      method: "GET",
+      url: path
+    });
+    // console.log('requirePath', path);
   };
   return {
     getData: getData,
     postGetData: postGetData,
-    streamData: streamData
+    getDataByLink: getDataByLink
   }
 }])

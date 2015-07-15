@@ -52,9 +52,9 @@ def twitterreq(url, method, parameters):
   # url = "https://stream.twitter.com/1.1/statuses/filter.json?delimited=length&track=twitterapi"
   # url = "https://api.twitter.com/1.1/geo/search.json?query=Toronto"
   # url = "https://api.twitter.com/1.1/geo/search.json?lat=37.78&long=-122.40"
-  # url = "https://stream.twitter.com/1/statuses/sample.json"
+  # url = "https://api.twitter.com/1.1/geo/search.json?granularity=city&lat=37.774546&long=-122.433523"
 def fetchsamples():
-  url = "https://api.twitter.com/1.1/geo/search.json?granularity=city&lat=37.774546&long=-122.433523"
+  url = "https://stream.twitter.com/1/statuses/sample.json"
   parameters = []
   response = twitterreq(url, "GET", parameters)
   for line in response:
