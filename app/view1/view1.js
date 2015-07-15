@@ -34,7 +34,8 @@ angular.module('myApp.view1', [])
 	// var newCity = new google.maps.LatLng(37, -122);
     var mapOptions = {
         // zoom: 8,
-        zoom: 12,
+        // zoom: 12,
+        zoom: 11,
         center: sanFrancisco,
         // center: newCity,
         mapTypeId: google.maps.MapTypeId.TERRAIN,
