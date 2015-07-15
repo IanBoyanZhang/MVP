@@ -23,11 +23,11 @@ angular.module('myApp.view1', [])
 	}
 
 	function changeRadius(hMap) {
-	  hMap.set('radius', heatmap.get('radius') ? null : 15);
+	  hMap.set('radius', heatmap.get('radius') ? null : 18);
 	}
 
 	function changeOpacity(hMap) {
-	  hMap.set('opacity', heatmap.get('opacity') ? null : 0.7);
+	  hMap.set('opacity', heatmap.get('opacity') ? null : 0.8);
 	}
 
 	var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
@@ -48,14 +48,18 @@ angular.module('myApp.view1', [])
     var heatmap;
 	// // heatmap.setMap($scope.map);
 	// // Only SF
-	DataComm.getData().then(function(dataResponse, status, headers, config) {
-		heatmap = new google.maps.visualization.HeatmapLayer({
-		  data: HeatMapLayer.layerDataTransform(dataResponse.data),
-		  //   data: HeatMapLayer.heatmapData, 		// Testing
-		  dissipating: true,
-		  map: $scope.map
-		});
-	});
+	// DataComm.getData().then(function(dataResponse, status, headers, config) {
+	// 	heatmap = new google.maps.visualization.HeatmapLayer({
+	// 	  data: HeatMapLayer.layerDataTransform(dataResponse.data),
+	// 	  //   data: HeatMapLayer.heatmapData, 		// Testing
+	// 	  dissipating: true,
+	// 	  map: $scope.map
+	// 	});
+
+	// 	changeGradient(heatmap);
+	// 	changeRadius(heatmap);
+	// 	changeOpacity(heatmap);
+	// });
 
 	// DataComm.postGetData().then(function(dataResponse, status, headers, config) {
 	// 	heatmap = new google.maps.visualization.HeatmapLayer({
@@ -73,7 +77,6 @@ angular.module('myApp.view1', [])
 		  dissipating: true,
 		  map: $scope.map
 		});
-
 		changeGradient(heatmap);
 		changeRadius(heatmap);
 		changeOpacity(heatmap);
