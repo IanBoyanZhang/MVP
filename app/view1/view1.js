@@ -72,10 +72,10 @@ angular.module('myApp.view1', [])
 	// });
 
 	DataComm.getDataByLink('data/raw').then(function(dataResponse, status, headers, config) {
+		console.log("Received from server side: ", dataResponse.data);
 		heatmap = new google.maps.visualization.HeatmapLayer({
 		  data: HeatMapLayer.layerDataTransform(dataResponse.data),
 		  //   data: HeatMapLayer.heatmapData, 		// Testing
-		  console.log("Received from server side: ", dataResponse.data);
 		  dissipating: true,
 		  map: $scope.map
 		});
