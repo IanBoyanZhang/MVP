@@ -71,7 +71,7 @@ angular.module('myApp.view1', [])
 	// 	});
 	// });
 
-	DataComm.getDataByLink('/data/raw').then(function(dataResponse, status, headers, config) {
+	DataComm.getDataByLink('data/raw').then(function(dataResponse, status, headers, config) {
 		heatmap = new google.maps.visualization.HeatmapLayer({
 		  data: HeatMapLayer.layerDataTransform(dataResponse.data),
 		  //   data: HeatMapLayer.heatmapData, 		// Testing
