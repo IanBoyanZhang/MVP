@@ -7,7 +7,7 @@ var fs 		 = require('fs'),
 	readline = require('readline');
 
 var LineByLineReader = require('line-by-line');
-var lr = new LineByLineReader('./data/rawData');
+var lr = new LineByLineReader('./app/data/rawData');
 
 var globalLocTable = [];
 
