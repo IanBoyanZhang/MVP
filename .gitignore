@@ -12,4 +12,4 @@ data/*
 README.md
 ./app/index.html
 ./data
-./server/config/credential.py
+./server/config/credentials.py
