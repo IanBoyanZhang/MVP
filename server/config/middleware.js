@@ -85,7 +85,7 @@ module.exports = function(app, express) {
 	readLineByLine();
 
 	// readLineByLine();
-	app.get("/data/raw", function(req, res, next) {
+	app.get("data/raw", function(req, res, next) {
 		// readLineByLine(req, res, next);
 		console.log(globalLocTable);
 		res.json(globalLocTable);
