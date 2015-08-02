@@ -1,339 +1,85 @@
-<<<<<<< HEAD
-# angular-seed — the seed for AngularJS apps
 
-This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
-You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
+# MVP (Solo) Project
 
-The seed contains a sample AngularJS application and is preconfigured to install the Angular
-framework and a bunch of development and testing tools for instant web development gratification.
+### Overview:
 
-The seed app doesn't do much, just shows how to wire two controllers and views together.
+You have 36 hours to produce something compelling using the skills you've honed over the past five weeks. 
 
+__Q:__ What are your inputs?
+<br>
+__A:__ 36 hours of (relatively) undivided attention
 
-## Getting Started
+__Q:__ What is the required output?
+<br>
+__A:__ A compelling product presentation delivered to your classmates.
 
-To get you started you can simply clone the angular-seed repository and install the dependencies:
 
-### Prerequisites
+### Getting Started:
 
-You need git to clone the angular-seed repository. You can get git from
-[http://git-scm.com/](http://git-scm.com/).
+To build on your learning of core engineering concepts, we will begin thinking about how to actually manage projects. Engineering management is a deep skill and discipline with lots of history and academic writing. We will focus on just some highlights of content to give a very brief context of how we arrive here.
 
-We also use a number of node.js tools to initialize and test angular-seed. You must have node.js and
-its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
+* Use an [Iterative and incremental development process](http://en.wikipedia.org/wiki/Iterative_and_incremental_development) instead of a [Waterfall Process](http://en.wikipedia.org/wiki/Waterfall_model)
 
-### Clone angular-seed
+<!--
+*  [Agile](http://en.wikipedia.org/wiki/Agile_software_development) - is a modern eveolution of Iterative and Incremental Development (IID) that further formalizes the IID philosophy with a set of principles and best practices. It also applies Lean Manufacturing process like [Kanban](http://en.wikipedia.org/wiki/Kanban).-->
 
-Clone the angular-seed repository using [git][git]:
+<!--* [Lean Product Process](http://theleanstartup.com/principles) - Takes the essence of Agile Development methodology and applies it more broadly to the development of product and buiness models that support he requirements of the project.
+-->
 
-```
-git clone https://github.com/angular/angular-seed.git
-cd angular-seed
-```
 
-If you just want to start a new project without the angular-seed commit history then you can do:
+## Basic Requirements
+- [X] Fork the repo
+- Complete the PRESS-RELEASE.md template (<30min)
+  - [Mostly Completed] Pick an idea (implement a technology, build a product, make art, etc).
+  - [X] Write it down on paper
+  - [ ] Imagine what portion of this could be done in 24 hours.
+  - [X] Cut the scope in half.
+  - [X] Cut the above scope in half again.
+  - [X] Fill in the README.md template document
+- [X] Use iterative development (go straight to something that demos your idea)
+- [ ] Prepare for pitch @ demo on Tuesday
 
-```bash
-git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-name>
-```
 
-The `depth=1` tells git to only pull down one commit worth of historical data.
+## Extra Credit
 
-### Install Dependencies
+- [ ] Storage - if your app persists data, use a tool like Parse or Firebase. 
+- [ ] If applicable, use an MVC Framework - Make your app production grade with a full-on MVC. 
 
-We have two kinds of dependencies in this project: tools and angular framework code.  The tools help
-us manage and test the application.
 
-* We get the tools we depend upon via `npm`, the [node package manager][npm].
-* We get the angular code via `bower`, a [client-side code package manager][bower].
 
-We have preconfigured `npm` to automatically run `bower` so we can simply do:
+Task Checker:
+Front End: 								  TimeLine
+[x] Angular JS  						   12:00PM
+[X] Basic google map integration API vs Open Map
+[Not applicapable] Flight tracking information API      12:00PM
+[Not applicapable ] Choose D3 or WebGL    12:45AM
+[X] Naive google map style customization  01:05AM 		01:41AM
+[X] Native google map style overlay       01:41AM
+[Not attempted] Tryout Polymap/D3 with AngularJS      02:30AM
+[X] Try out google Native Visualization    3:00AM	    02:33AM
+	Google native visualization capability is limted
 
-```
-npm install
-```
+Back End: 								TimeLine
+[x] Bring up express server 			  
+[X] Installed OAuth                        02:15PM
+[X] Twitter API authentication			   02:30PM        7:00PM
+[X] Twitter API in general 				   09:45PM       11:00PM
+[X] Twitter Location API 				   11:45PM 	     11:45PM
+<!-- [ ] Use other API for other service -->
+[Not applicapable] Call Python Script in JavaScript/JSON? 12:15AM 12:40AM
+[X] Read single file and parsing           11:00AM 		  1:00PM
+[X] Read large file using line by line or standard readFile method
+									       01:15AM       03:25PM
+[X] Parse twitter data 					    4:00AM        1:30PM
 
-Behind the scenes this will also call `bower install`.  You should find that you have two new
-folders in your project.
+Project Management                      TimeLine
+[X] Git/code structure setup 			 11:45pm
+[] Heroku Deployment                     Extra
 
-* `node_modules` - contains the npm packages for the tools we need
-* `app/bower_components` - contains the angular framework files
+## Dependency
+Python 
+	oauth2 library
+	 pip install --user oauth2
 
-*Note that the `bower_components` folder would normally be installed in the root folder but
-angular-seed changes this location through the `.bowerrc` file.  Putting it in the app folder makes
-it easier to serve the files by a webserver.*
-
-### Run the Application
-
-We have preconfigured the project with a simple development web server.  The simplest way to start
-this server is:
-
-```
-npm start
-```
-
-Now browse to the app at `http://localhost:8000/app/index.html`.
-
-
-
-## Directory Layout
-
-```
-app/                    --> all of the source files for the application
-  app.css               --> default stylesheet
-  components/           --> all app specific modules
-    version/              --> version related components
-      version.js                 --> version module declaration and basic "version" value service
-      version_test.js            --> "version" value service tests
-      version-directive.js       --> custom directive that returns the current app version
-      version-directive_test.js  --> version directive tests
-      interpolate-filter.js      --> custom interpolation filter
-      interpolate-filter_test.js --> interpolate filter tests
-  view1/                --> the view1 view template and logic
-    view1.html            --> the partial template
-    view1.js              --> the controller logic
-    view1_test.js         --> tests of the controller
-  view2/                --> the view2 view template and logic
-    view2.html            --> the partial template
-    view2.js              --> the controller logic
-    view2_test.js         --> tests of the controller
-  app.js                --> main application module
-  index.html            --> app layout file (the main html template file of the app)
-  index-async.html      --> just like index.html, but loads js files asynchronously
-karma.conf.js         --> config file for running unit tests with Karma
-e2e-tests/            --> end-to-end tests
-  protractor-conf.js    --> Protractor config file
-  scenarios.js          --> end-to-end scenarios to be run by Protractor
-```
-
-## Testing
-
-There are two kinds of tests in the angular-seed application: Unit tests and End to End tests.
-
-### Running Unit Tests
-
-The angular-seed app comes preconfigured with unit tests. These are written in
-[Jasmine][jasmine], which we run with the [Karma Test Runner][karma]. We provide a Karma
-configuration file to run them.
-
-* the configuration is found at `karma.conf.js`
-* the unit tests are found next to the code they are testing and are named as `..._test.js`.
-
-The easiest way to run the unit tests is to use the supplied npm script:
-
-```
-npm test
-```
-
-This script will start the Karma test runner to execute the unit tests. Moreover, Karma will sit and
-watch the source and test files for changes and then re-run the tests whenever any of them change.
-This is the recommended strategy; if your unit tests are being run every time you save a file then
-you receive instant feedback on any changes that break the expected code functionality.
-
-You can also ask Karma to do a single run of the tests and then exit.  This is useful if you want to
-check that a particular version of the code is operating as expected.  The project contains a
-predefined script to do this:
-
-```
-npm run test-single-run
-```
-
-
-### End to end testing
-
-The angular-seed app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
-are run with the [Protractor][protractor] End-to-End test runner.  It uses native events and has
-special features for Angular applications.
-
-* the configuration is found at `e2e-tests/protractor-conf.js`
-* the end-to-end tests are found in `e2e-tests/scenarios.js`
-
-Protractor simulates interaction with our web app and verifies that the application responds
-correctly. Therefore, our web server needs to be serving up the application, so that Protractor
-can interact with it.
-
-```
-npm start
-```
-
-In addition, since Protractor is built upon WebDriver we need to install this.  The angular-seed
-project comes with a predefined script to do this:
-
-```
-npm run update-webdriver
-```
-
-This will download and install the latest version of the stand-alone WebDriver tool.
-
-Once you have ensured that the development web server hosting our application is up and running
-and WebDriver is updated, you can run the end-to-end tests using the supplied npm script:
-
-```
-npm run protractor
-```
-
-This script will execute the end-to-end tests against the application being hosted on the
-development server.
-
-
-## Updating Angular
-
-Previously we recommended that you merge in changes to angular-seed into your own fork of the project.
-Now that the angular framework library code and tools are acquired through package managers (npm and
-bower) you can use these tools instead to update the dependencies.
-
-You can update the tool dependencies by running:
-
-```
-npm update
-```
-
-This will find the latest versions that match the version ranges specified in the `package.json` file.
-
-You can update the Angular dependencies by running:
-
-```
-bower update
-```
-
-This will find the latest versions that match the version ranges specified in the `bower.json` file.
-
-
-## Loading Angular Asynchronously
-
-The angular-seed project supports loading the framework and application scripts asynchronously.  The
-special `index-async.html` is designed to support this style of loading.  For it to work you must
-inject a piece of Angular JavaScript into the HTML page.  The project has a predefined script to help
-do this.
-
-```
-npm run update-index-async
-```
-
-This will copy the contents of the `angular-loader.js` library file into the `index-async.html` page.
-You can run this every time you update the version of Angular that you are using.
-
-
-## Serving the Application Files
-
-While angular is client-side-only technology and it's possible to create angular webapps that
-don't require a backend server at all, we recommend serving the project files using a local
-webserver during development to avoid issues with security restrictions (sandbox) in browsers. The
-sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
-etc to function properly when an html page is opened via `file://` scheme instead of `http://`.
-
-
-### Running the App during Development
-
-The angular-seed project comes preconfigured with a local development webserver.  It is a node.js
-tool called [http-server][http-server].  You can start this webserver with `npm start` but you may choose to
-install the tool globally:
-
-```
-sudo npm install -g http-server
-```
-
-Then you can start your own development web server to serve static files from a folder by
-running:
-
-```
-http-server -a localhost -p 8000
-```
-
-Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
-configure your server to serve the files under the `app/` directory.
-
-
-### Running the App in Production
-
-This really depends on how complex your app is and the overall infrastructure of your system, but
-the general rule is that all you need in production are all the files under the `app/` directory.
-Everything else should be omitted.
-
-Angular apps are really just a bunch of static html, css and js files that just need to be hosted
-somewhere they can be accessed by browsers.
-
-If your Angular app is talking to the backend server via xhr or other means, you need to figure
-out what is the best way to host the static files to comply with the same origin policy if
-applicable. Usually this is done by hosting the files by the backend server or through
-reverse-proxying the backend server(s) and webserver(s).
-
-
-## Continuous Integration
-
-### Travis CI
-
-[Travis CI][travis] is a continuous integration service, which can monitor GitHub for new commits
-to your repository and execute scripts such as building the app or running tests. The angular-seed
-project contains a Travis configuration file, `.travis.yml`, which will cause Travis to run your
-tests when you push to GitHub.
-
-You will need to enable the integration between Travis and GitHub. See the Travis website for more
-instruction on how to do this.
-
-### CloudBees
-
-CloudBees have provided a CI/deployment setup:
-
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/angular-js-clickstart/master/clickstart.json">
-<img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
-
-If you run this, you will get a cloned version of this repo to start working on in a private git repo,
-along with a CI service (in Jenkins) hosted that will run unit and end to end tests in both Firefox and Chrome.
-
-
-## Contact
-
-For more information on AngularJS please check out http://angularjs.org/
-
-[git]: http://git-scm.com/
-[bower]: http://bower.io
-[npm]: https://www.npmjs.org/
-[node]: http://nodejs.org
-[protractor]: https://github.com/angular/protractor
-[jasmine]: http://jasmine.github.io
-[karma]: http://karma-runner.github.io
-[travis]: https://travis-ci.org/
-[http-server]: https://github.com/nodeapps/http-server
-=======
-# MVP
-Starter project with angular seed and ngmap 
-
-Idea:
-Geological information and news sentiment analysis
-
-<!-- or charging station/gas station process real time  -->
-
-Heat map visualization 
-Better real time
-
-Flight price/hotel year round information recommendation/coordince best traveling time application together
-http://www.openaip.net/
-http://www.heathrowairport.com/noise/what-you-can-do/track-flights-on-maps
-
-Drone non flight area?
-City noise??
-
-Data Visualization throught D3
-Reference book:
-https://www.packtpub.com/web-development/data-visualization-d3-and-angularjs
-
-<!-- ngmap: -->
-<!-- http://ngmap.github.io/ -->
-
-<!-- Not to use ngmap, starting with barebone google map api -->
-
-TODO:
-Resolve cross site origin visit issue by setting up server to host app
-
-PATH:
-
-Layout foundation of google map
-1. Merge google map display into AngularJS
-
-2. Understand Google maps basic operation, mapping 
-
-3. Heat map layout on top of basic layers
-
->>>>>>> edbe2549ccb9fa3a77a2ba1fc6789eb2804fad35
+Twitter authentication information
+<!-- https://apps.twitter.com/app/8543071/keys -->

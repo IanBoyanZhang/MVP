@@ -1,14 +1,10 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
-
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
-  });
-}])
-
-.controller('View2Ctrl', [function() {
-
+angular.module('myApp.view2', [])
+.controller('View2Ctrl', ['$scope', 'DataComm', function($scope, DataComm) {
+	// DataComm.getData();
+	DataComm.getData().then(function(dataResponse, status, headers, config) {
+		$scope.data = dataResponse.data;
+		// console.log("Data response: ", dataResponse.data);
+	})
 }]);

@@ -2,11 +2,30 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute',
+  'ui.router',
+  'myApp.services',
   'myApp.view1',
   'myApp.view2',
+  'myApp.twitter',
   'myApp.version'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+config(function($stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.otherwise('/');
+	
+	$stateProvider
+	.state('home', {
+		url: "/",
+		templateUrl: "view1/view1.html",
+		controller: "View1Ctrl"
+	})
+	.state('view2', {
+		url: "/view2",
+		templateUrl: "view2/view2.html",
+		controller: 'View2Ctrl'
+	})
+	.state('twitter', {
+		url: "/twitter",
+		templateUrl: "twitter/twitter.html",
+		controller: 'TwitterListCtrl'	
+	})
+})

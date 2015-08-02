@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
+  "name": "Twitter Heat Map",
   "description": "A starter project for AngularJS",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "",
   "license": "MIT",
   "private": true,
   "dependencies": {
