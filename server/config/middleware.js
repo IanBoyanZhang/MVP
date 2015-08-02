@@ -7,7 +7,7 @@ var fs 		 = require('fs'),
 	readline = require('readline');
 
 var LineByLineReader = require('line-by-line');
-var lr = new LineByLineReader('app/data/rawData');
+var lr = new LineByLineReader('./app/data/rawData');
 
 var globalLocTable = [];
 
@@ -85,13 +85,9 @@ module.exports = function(app, express) {
 	readLineByLine();
 
 	// readLineByLine();
-	app.get("data/raw", function(req, res, next) {
+	app.get("/data/raw", function(req, res, next) {
 		// readLineByLine(req, res, next);
-		// res.json(globalLocTable);
-		res.json( {
-	    id: id,
-	    name: 'TJ'
-  	});
+		res.json(globalLocTable);
 		next();
 	});
 	// readLargeFileInBatch();
