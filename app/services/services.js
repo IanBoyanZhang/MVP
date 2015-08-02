@@ -86,7 +86,6 @@ angular.module('myApp.services', [])
       method: "GET",
       url: path
     });
-    // console.log('requirePath', path);
   };
   return {
     getData: getData,

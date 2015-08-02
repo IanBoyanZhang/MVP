@@ -88,7 +88,10 @@ module.exports = function(app, express) {
 	app.get("data/raw", function(req, res, next) {
 		// readLineByLine(req, res, next);
 		// res.json(globalLocTable);
-		res.json("Received!");
+		res.json( {
+	    id: id,
+	    name: 'TJ'
+  	});
 		next();
 	});
 	// readLargeFileInBatch();
