@@ -64,7 +64,7 @@ angular.module('myApp.services', [])
 }])
 .factory('DataComm', ['$http', function($http) {
   // var baseUrl = "http://twitter-heat-map.herokuapp.com"
-  var baseUrl = "";
+  var baseUrl = "http://testgooglempa.herokuapp.com";
   // var baseUrl = "http://localhost:8000";
   var getData = function() {
     return $http({
