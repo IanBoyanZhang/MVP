@@ -75,6 +75,7 @@ angular.module('myApp.view1', [])
 		heatmap = new google.maps.visualization.HeatmapLayer({
 		  data: HeatMapLayer.layerDataTransform(dataResponse.data),
 		  //   data: HeatMapLayer.heatmapData, 		// Testing
+		  console.log("Received from server side: ", dataResponse.data);
 		  dissipating: true,
 		  map: $scope.map
 		});
