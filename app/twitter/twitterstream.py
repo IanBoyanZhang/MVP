@@ -3,10 +3,10 @@ import urllib2 as urllib
 
 # See assignment1.html instructions or README for how to get these credentials
 
-api_key = "MNpmyWfqMv8qCXXWhIlAG84Ok"
-api_secret = "CS7POWUkMHsHcPgzVCQMtCIb7Vu47vuHHodPrXPe32ag7TIwmp"
-access_token_key = "3278872357-tvBraRyprrRID0hBI1SvIROb4UjnYE9m39lVMhf"
-access_token_secret = "p8no5D84NDYJ2NXWI8DVRmwkY7YFIglB3KssasN5ky9tS"
+api_key = "tVXDH76mrXf91S9a5oFWfJeS6"
+api_secret = "5JQIPYYW2D4umcMdVzSl1eNZHlUwjmmfZJ7Heh64eFZpIos0Y8"
+access_token_key = "632487613-trtJZIzJ94hjunlgDvy9v39iTDRLYmkEgA822QlJ"
+access_token_secret = "N3dhXBU2ROdc7Xhp7ZBwNKgULLWRrPkgWYGmdJkroEOsY"
 
 _debug = 0
 
@@ -49,10 +49,7 @@ def twitterreq(url, method, parameters):
   response = opener.open(url, encoded_post_data)
 
   return response
-  # url = "https://stream.twitter.com/1.1/statuses/filter.json?delimited=length&track=twitterapi"
-  # url = "https://api.twitter.com/1.1/geo/search.json?query=Toronto"
-  # url = "https://api.twitter.com/1.1/geo/search.json?lat=37.78&long=-122.40"
-  # url = "https://api.twitter.com/1.1/geo/search.json?granularity=city&lat=37.774546&long=-122.433523"
+
 def fetchsamples():
   url = "https://stream.twitter.com/1/statuses/sample.json"
   parameters = []

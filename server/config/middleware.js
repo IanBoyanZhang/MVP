@@ -7,13 +7,7 @@ var fs 		 = require('fs'),
 	readline = require('readline');
 
 var LineByLineReader = require('line-by-line');
-var lr = new LineByLineReader('data/rawData');
-	// es  	= require('event-stream')
-
-// var instream = fs.createReadStream('../../data/output', {flags: 'r', encoding: 'utf-8'});
-// var rl       = readline.createInterface({
-	// input: instream
-// })
+var lr = new LineByLineReader('./data/rawData');
 
 var globalLocTable = [];
 
@@ -30,8 +24,8 @@ var executionContent = function	(req, res, next) {
 
 	var centroidLocation;
 	// loop through request body to parse all requested string
-	// console.log("Server received request: ", req.body);
-	var path = req.body.name || "./data/sf"
+	console.log("Server received request: ", req.body);
+	var path = req.body.name || "./data/rawData"
 	fs.readFile(path, {"encoding": "utf8"}, function(err, data) {
 		if (err) { throw err };
 		centroidLocation = parseData(data);
@@ -42,21 +36,13 @@ var executionContent = function	(req, res, next) {
 };
 
 var readLineByLine = function() {
-	// var parseLine = function(line) {
-	// 	return null;
-	// };
-	// console.log(lr);
-
 	lr.on('error', function(err) {
-		if (err) { throw err };
+		// if (err) { throw err };
+		console.log(err);
+		console.log("dirname", __dirname);
 	});
 
 	lr.on('line', function (line) {
-		// pause emitting of lines 
-		// lr.pause();
-		// console.log(line);
-		// lr.resume();
-		// console.log(JSON.parse(line));
 		var val = JSON.parse(line).coordinates;
 		if( val !== undefined ) {
 			// console.log(val);
@@ -68,8 +54,6 @@ var readLineByLine = function() {
 
 	lr.on('end', function() {
 		console.log("All lines are read, file is closed now!");
-		// console.log(globalLocTable);
-		// res.json(globalLocTable);
 	})
 };
 
@@ -78,10 +62,6 @@ var readLargeFileInBatch = function(req, res, next) {
 	var path = 'data/rawData';
 	fs.readFile(path, {"encoding": "utf8"}, function(err, data) {
 		if (err) { throw err };
-		// centroidLocation = parseData(data);
-		// console.log(centroidLocation);
-		// console.log(JSON.parse(data));
-		// console.log('Read large file!');
 	});	
 };
 
@@ -93,19 +73,21 @@ module.exports = function(app, express) {
 	app.use(express.static(__dirname + '/../../app'));
 
 	// Set up routing table
-	app.get("/data", function(req, res, next) {
-		// Functionality
-		// loop through
-		executionContent(req, res, next);
-	});
-	
-	app.post("/data", function(req, res, next) {
-		executionContent(req, res, next)
-	});
+	// app.get("/data", function(req, res, next) {
+	// 	// Functionality
+	// 	// loop through
+	// 	executionContent(req, res, next);
+	// });
+	// app.post("/data", function(req, res, next) {
+	// 	executionContent(req, res, next)
+	// });
 
 	readLineByLine();
+
+	// readLineByLine();
 	app.get("/data/raw", function(req, res, next) {
 		// readLineByLine(req, res, next);
+		console.log(globalLocTable);
 		res.json(globalLocTable);
 		next();
 	});
