@@ -63,23 +63,24 @@ angular.module('myApp.services', [])
   return d3;  
 }])
 .factory('DataComm', ['$http', function($http) {
+  var baseUrl = "http://twitter-heat-map.herokuapp.com/"
   var getData = function() {
     return $http({
       method: "GET",
-      url: 'http://localhost:8000/data'
+      url: baseUrl + 'data'
     })
   };
 
   var postGetData = function() {
     return $http({
       method: "POST",
-      url: 'http://localhost:8000/data',
+      url: baseUrl + 'data',
       data: { name: "./data/city"}
     })
   };
 
   var getDataByLink = function(link) {
-    var path = "http://localhost:8000" + link;
+    var path = baseUrl + link;
     return $http({
       method: "GET",
       url: path
