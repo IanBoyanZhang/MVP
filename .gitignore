@@ -11,5 +11,4 @@ data/*
 =======
 README.md
 ./app/index.html
-./data
 ./server/config/credentials.py
